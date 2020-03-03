@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nHb-Kv-1og">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rOQ-GE-pIb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -56,5 +56,121 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
         </scene>
+        <!--Pizza View Controller-->
+        <scene sceneID="TNR-P7-DdL">
+            <objects>
+                <viewController id="HZA-Xb-fZK" customClass="PizzaViewController" customModule="home15" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="70R-vc-DMU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-Zj-bdz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h0M-Zj-bdz" firstAttribute="leading" secondItem="z3e-yL-VdV" secondAttribute="leading" id="Bde-Xu-9R9"/>
+                            <constraint firstItem="h0M-Zj-bdz" firstAttribute="top" secondItem="70R-vc-DMU" secondAttribute="top" id="WH5-n4-qBF"/>
+                            <constraint firstAttribute="bottom" secondItem="h0M-Zj-bdz" secondAttribute="bottom" id="poz-Jd-gEL"/>
+                            <constraint firstItem="h0M-Zj-bdz" firstAttribute="trailing" secondItem="z3e-yL-VdV" secondAttribute="trailing" id="tLK-IM-Owh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z3e-yL-VdV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fca-08-ak9">
+                        <barButtonItem key="rightBarButtonItem" image="folder.fill.badge.plus" catalog="system" id="VLS-G8-rr0">
+                            <connections>
+                                <action selector="addPizza:" destination="HZA-Xb-fZK" id="zno-In-qys"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNewPizza" destination="VLS-G8-rr0" id="vgG-to-XM8"/>
+                        <outlet property="tableViewPizza" destination="h0M-Zj-bdz" id="JMT-iq-yRV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsY-lv-KD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="876.5625"/>
+        </scene>
+        <!--Make Your Pizza View Controller-->
+        <scene sceneID="PMT-tM-61b">
+            <objects>
+                <viewController storyboardIdentifier="MakeYourPizzaViewController" id="c4A-s2-smk" customClass="MakeYourPizzaViewController" customModule="home15" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MDd-iA-N0z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLN-fb-T9h">
+                                <rect key="frame" x="20" y="462" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ihG-pd-Zjm">
+                                <rect key="frame" x="20" y="546" width="374" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-Rh-RlE">
+                                <rect key="frame" x="182.5" y="381" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFc-uV-Pix">
+                                <rect key="frame" x="136" y="677" width="142" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Delicious"/>
+                                <connections>
+                                    <action selector="deliciousButtonDidClick:" destination="c4A-s2-smk" eventType="touchUpInside" id="RO3-Hz-7q1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PLN-fb-T9h" firstAttribute="leading" secondItem="6ZP-P5-Le4" secondAttribute="leading" constant="20" id="AU4-fW-mwc"/>
+                            <constraint firstItem="ihG-pd-Zjm" firstAttribute="top" secondItem="PLN-fb-T9h" secondAttribute="bottom" constant="50" id="Dr4-JO-pEn"/>
+                            <constraint firstItem="PLN-fb-T9h" firstAttribute="top" secondItem="Osg-Rh-RlE" secondAttribute="bottom" constant="50" id="Lh3-hi-6M1"/>
+                            <constraint firstItem="6ZP-P5-Le4" firstAttribute="trailing" secondItem="ihG-pd-Zjm" secondAttribute="trailing" constant="20" id="TSU-tT-gec"/>
+                            <constraint firstItem="lFc-uV-Pix" firstAttribute="top" secondItem="ihG-pd-Zjm" secondAttribute="bottom" constant="100" id="VxN-vl-JnX"/>
+                            <constraint firstItem="ihG-pd-Zjm" firstAttribute="leading" secondItem="6ZP-P5-Le4" secondAttribute="leading" constant="20" id="cRl-tR-q6E"/>
+                            <constraint firstItem="Osg-Rh-RlE" firstAttribute="centerX" secondItem="MDd-iA-N0z" secondAttribute="centerX" id="f4b-Dp-C7d"/>
+                            <constraint firstItem="lFc-uV-Pix" firstAttribute="centerX" secondItem="MDd-iA-N0z" secondAttribute="centerX" id="lmw-9W-ZG7"/>
+                            <constraint firstItem="6ZP-P5-Le4" firstAttribute="trailing" secondItem="PLN-fb-T9h" secondAttribute="trailing" constant="20" id="rNr-bY-q2H"/>
+                            <constraint firstItem="Osg-Rh-RlE" firstAttribute="top" secondItem="6ZP-P5-Le4" secondAttribute="top" constant="337" id="zd0-fm-b9T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6ZP-P5-Le4"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameOfPizza" destination="PLN-fb-T9h" id="IWq-ai-fY2"/>
+                        <outlet property="sizeOfPizza" destination="ihG-pd-Zjm" id="jCm-re-qMA"/>
+                        <outlet property="testo" destination="Osg-Rh-RlE" id="EHq-Vx-YvA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0H3-VU-qRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="877"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YPd-Sz-mTm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rOQ-GE-pIb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o0K-3V-t9y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HZA-Xb-fZK" kind="relationship" relationship="rootViewController" id="hwz-DX-gPa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRU-c7-4oW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="876.5625"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="folder.fill.badge.plus" catalog="system" width="64" height="42"/>
+    </resources>
 </document>

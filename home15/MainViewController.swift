@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         
         var a = 1
         var b = 1
-        for _ in 0..<29{
+        for _ in 0..<28{
             let  fib = a + b
             a = b
             b = fib
@@ -28,15 +28,8 @@ class MainViewController: UIViewController {
             let element = colorArray[colorIndex]
             colorArray.append(element)
         }
-        
-        
-        
     }
-    
-    
-    
 }
-
 
 
 extension MainViewController: UITableViewDataSource {
@@ -49,7 +42,10 @@ extension MainViewController: UITableViewDataSource {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         if cell == nil {
+             print("new cell")
              cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        } else {
+            print("pere")
         }
         //        cell.textLabel?.text = colorName[indexPath.row]
         cell!.textLabel?.textColor = colorArray[indexPath.row]
